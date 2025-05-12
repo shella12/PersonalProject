@@ -1,10 +1,13 @@
 from twilio.rest import Client
-
+import os
+from dotenv import load_dotenv
 # Fill in your credentials and numbers
-TWILIO_SID = "AC4d378599c13ba7fcb8185cde83b9ac75"
-TWILIO_AUTH_TOKEN = "caa55e02754d5d2e1d2964f96c052817"
+
+load_dotenv()
+TWILIO_SID = os.getenv("ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.getenv("ACCOUNT_AUTH_TOKEN")
 TWILIO_WHATSAPP_NUMBER = "whatsapp:+14155238886"  # Twilio sandbox number
-YOUR_WHATSAPP_NUMBER = "whatsapp:+923325947980"    # Your verified number
+YOUR_WHATSAPP_NUMBER = os.getenv("PHONE_NUMBER")    # Your verified number
 
 client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 

@@ -6,9 +6,9 @@ def detect_bollinger_signal(df):
     
     last = df.iloc[-1] 
     # print(f"Last TIMESTAMP = {last['timestamp']}")
-    print(f"Last close = {last['close']}")
-    print(f"Last Lower = {last['Lower']}")
-    print(f"Last Upper = {last['Upper']}")
+    print(f"Last close = {last['close']}", flush=True)
+    print(f"Last Lower = {last['Lower']}", flush=True)
+    print(f"Last Upper = {last['Upper']}", flush=True)
     if last['close'] > last['Upper']:
         return f"TRADE LOWER last price close: {last['Upper']}"
     elif last['close'] < last['Lower']:

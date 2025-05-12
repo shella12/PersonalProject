@@ -7,11 +7,11 @@ from datetime import datetime
 def wait_until_next_5m():
     now = datetime.utcnow()
     seconds = (5 - now.minute % 5) * 60 - now.second
-    print(f"[~] Waiting {seconds}s until next 5m candle close...")
+    print(f"[~] Waiting {seconds}s until next 5m candle close...", flush=True)
     time.sleep(seconds)
 
 def main():
-    print("[*] Starting Bollinger Band 5m candle monitor...")
+    print("[*] Starting Bollinger Band 5m candle monitor...", flush=True)
 
     while True:
         wait_until_next_5m()
@@ -22,10 +22,10 @@ def main():
 
         if signal:
             message = f"🚨 {signal.upper()} SIGNAL - 5m candle breached Bollinger Band.\nTrade BTCUSDT for 10m interval."
-            print("[!] Signal detected:", message)
+            print("[!] Signal detected:", message, flush=True)
             send_whatsapp(message)
         else:
-            print("[-] No signal this candle.")
+            print("[-] No signal this candle.", flush=True)
 
         # Wait just a bit before next fetch to avoid overlap
         time.sleep(5)

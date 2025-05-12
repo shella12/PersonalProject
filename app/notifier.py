@@ -18,6 +18,6 @@ def send_whatsapp(message):
             from_=TWILIO_WHATSAPP_NUMBER,
             to=YOUR_WHATSAPP_NUMBER
         )
-        print(f"[+] WhatsApp sent: {msg.sid}")
+        print(f"[+] WhatsApp sent: {msg.sid}", flush=True)
     except Exception as e:
-        print("[-] WhatsApp send failed:", e)
+        print("[-] WhatsApp send failed:", e, flush=True)

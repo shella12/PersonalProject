@@ -14,20 +14,23 @@ def main():
     print("[*] Starting Bollinger Band 5m candle monitor...", flush=True)
 
     while True:
-        wait_until_next_5m()
+        try:
+            wait_until_next_5m()
 
-        print("[+] Fetching 5m candle data...")
-        df_5m = fetch_5m_candles()
-        signal = detect_bollinger_signal(df_5m)
+            print("[+] Fetching 5m candle data...", flush=True)
+            df_5m = fetch_5m_candles()
+            signal = detect_bollinger_signal(df_5m)
 
-        if signal:
-            message = f"🚨 {signal.upper()} SIGNAL - 5m candle breached Bollinger Band.\nTrade BTCUSDT for 10m interval."
-            print("[!] Signal detected:", message, flush=True)
-            send_whatsapp(message)
-        else:
-            print("[-] No signal this candle.", flush=True)
+            if signal:
+                message = f"🚨 {signal.upper()} SIGNAL - 5m candle breached Bollinger Band.\nTrade BTCUSDT for 10m interval."
+                print("[!] Signal detected:", message, flush=True)
+                send_whatsapp(message)
+            else:
+                print("[-] No signal this candle.", flush=True)
 
-        # Wait just a bit before next fetch to avoid overlap
+        except Exception as e:
+            print(f"[X] Unhandled exception in main loop: {e}", flush=True)
+
         time.sleep(5)
 
 if __name__ == "__main__":

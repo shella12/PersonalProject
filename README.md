@@ -39,13 +39,9 @@ This Python bot monitors cryptocurrency prices (e.g., BTCUSDT) on Binance in rea
 ## Sample Alert
 
 > “[!] Signal detected: 🚨 LOWER SIGNAL - 5m candle breached Bollinger Band. Trade BTCUSDT for 10m interval”
-> “[!] Signal detected: 🚨 HIGHER SIGNAL - 5m candle breached Bollinger Band. Trade BTCUSDT for 10m interval”
 
 ---
-
-## Screenshots
-
-*Include a screenshot or sample of the WhatsApp message if you have it!*
+> “[!] Signal detected: 🚨 HIGHER SIGNAL - 5m candle breached Bollinger Band. Trade BTCUSDT for 10m interval”
 
 ---
 

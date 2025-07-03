@@ -62,3 +62,8 @@ This Python bot monitors cryptocurrency prices (e.g., BTCUSDT) on Binance in rea
 git clone https://github.com/shella12/PersonalProject.git
 cd PersonalProject
 pip install -r requirements.txt
+```
+
+### How To Run
+
+To run the program run the command in terminal or bash `py run.py`

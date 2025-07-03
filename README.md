@@ -66,4 +66,4 @@ pip install -r requirements.txt
 
 ### How To Run
 
-To run the program run the command in terminal or bash `py run.py`
+To run the program run the command in terminal or bash `python run.py`
